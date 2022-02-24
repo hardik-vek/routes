@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class OrdersController < ApplicationController
   before_action :get_product
   before_action :find_order, only: [:show, :edit, :update, :destroy]
@@ -47,6 +48,7 @@ class OrdersController < ApplicationController
   def get_product
     @product = Product.find(params[:product_id])
   end
+
   def find_order
     @order = @product.orders.find(params[:id])
   end
